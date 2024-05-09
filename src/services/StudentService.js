@@ -8,6 +8,9 @@ class StudentService{
         return axios.get(STUDENT_API_BASE_URL+"/getAll");
     }
 
+    createStudent(student){
+        return axios.post(STUDENT_API_BASE_URL+"/add",student);
+    }
 
 }
 
