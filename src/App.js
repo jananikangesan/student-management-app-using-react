@@ -1,4 +1,5 @@
 import './App.css';
+import CreateStudentComponent from './components/CreateStudentComponent';
 import FooterComponent from './components/FooterComponent';
 import HeaderComponent from './components/HeaderComponent';
 import ListStudentComponent from './components/ListStudentComponent';
@@ -12,8 +13,8 @@ function App() {
 
           <div className="container">
             <Routes>
-              <Route path="/" Component={ListStudentComponent}></Route>
-              <Route path="/student" Component={ListStudentComponent}></Route>
+              <Route path="/" exact Component={ListStudentComponent}></Route>
+              <Route path="/add-student" Component={CreateStudentComponent}></Route>
             </Routes>
           </div>
 
