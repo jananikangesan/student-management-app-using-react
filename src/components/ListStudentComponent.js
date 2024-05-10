@@ -16,6 +16,9 @@ function ListStudentComponent() {
         
         navigate("/add-student");
     };
+    const editStudent=(id)=>{
+        navigate(`/update-student/${id}`)
+    }
 
     return (
         <div>
@@ -39,6 +42,10 @@ function ListStudentComponent() {
                                     <tr key={student.id}>
                                         <td>{student.name}</td>
                                         <td>{student.address}</td>
+                                        <td>
+                                            <button onClick={()=> editStudent(student.id)} className='btn btn-info '>Update</button>
+                                            {/* <button onClick={()=> deleteStudent(student.id)} className='btn btn-danger'>Delete</button> */}
+                                        </td>
                                     </tr>
                             )
                         }
