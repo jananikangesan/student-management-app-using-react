@@ -19,7 +19,16 @@ function ListStudentComponent() {
     const editStudent=(id)=>{
         navigate(`/update-student/${id}`)
     }
-
+    const deleteStudent = (id) => {
+        StudentService.deleteStudent(id)
+            .then(() => {
+                setStudents(students.filter((stu) => stu.id !== id));
+                console.log("student deleted successfully");
+            })
+            .catch((error) => {
+                console.error("Error deleting student:", error);
+            });
+    };
     return (
         <div>
             <h2 className='text-center'>Students List</h2>
@@ -44,7 +53,7 @@ function ListStudentComponent() {
                                         <td>{student.address}</td>
                                         <td>
                                             <button onClick={()=> editStudent(student.id)} className='btn btn-info '>Update</button>
-                                            {/* <button onClick={()=> deleteStudent(student.id)} className='btn btn-danger'>Delete</button> */}
+                                            <button style={{marginLeft:"10px"}} onClick={()=> deleteStudent(student.id)} className='btn btn-danger'>Delete</button>
                                         </td>
                                     </tr>
                             )
