@@ -11,6 +11,15 @@ class StudentService{
     createStudent(student){
         return axios.post(STUDENT_API_BASE_URL+"/add",student);
     }
+    getStudentById(studentId){
+        return axios.get(STUDENT_API_BASE_URL+"/getStudent/"+studentId);
+    }
+    updateStudent(student,studentId){
+        return axios.put(STUDENT_API_BASE_URL+"/update/"+studentId,student);
+    }
+    deleteStudent(studentId){
+        return axios.delete(STUDENT_API_BASE_URL+"/delete/"+studentId);
+    }
 
 }
 
