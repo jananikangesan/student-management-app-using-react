@@ -11,7 +11,6 @@ function App() {
     <div>
       <Router>  
           <HeaderComponent/>
-
           <div className="container">
             <Routes>
               <Route path="/" exact Component={ListStudentComponent}></Route>
